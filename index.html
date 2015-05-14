@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Esempio Blockly - Javascript</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+	<script type="text/javascript">
+		// function that gets called once Blockly frame loads
+		window.blockly_loaded = function(blockly) {
+			return window.Blockly = blockly;
+		}
+		
+		// function chiamata dal bottone button_run
+		function esegui() {
+			// recupero il codice Javascript derivante dai blocchi
+			code = window.Blockly.JavaScript.workspaceToCode();
+			// visualizzo il codice
+			document.getElementById("js_codice").value = code;	
+			// eseguo il codice
+			eval(code);
+		}
+	</script>
+</head>
+
+<body>
+	<img id="logo" src="logo.gif" alt="logo unipr" style="width:100px; height:100px">
+	<div id="parte_1">Prima parte del documento</div>
+	<div id="parte_2">Seconda parte del documento</div>
+	<button id="button_run" onclick="esegui()"> Esegui Code Block</button>
+	<form>
+		Codice Javascript eseguito<br>
+		<textarea name="js_codice" id="js_codice" readonly rows="10" cols="80">Codice</textarea>
+	</form>
+	<div id="blockly_editor">
+		<!-- Blockly will be injected in the iframe below //-->
+		<iframe id="blockly" src="blockly.html" width="100%"></iframe>
+	</div>
+</body>
+</html>

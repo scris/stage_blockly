@@ -1,0 +1,21 @@
+body
+{
+	font-family:Arial, sans-serif;
+	font-size: 16pt;
+	background: #FFF;
+}
+#blockly
+{
+	border:1px solid #CCC;
+	padding-left:0;
+	height:300px;
+}
+#blockly_editor
+{
+	width:50%;
+	float:left;
+}
+#button_run
+{
+	margin-left:2%;
+}
